@@ -29,9 +29,12 @@ class AvcDecoderConfigurationRecord;
 class HevcDecoderConfigurationRecord;
 class LHevcDecoderConfigurationRecord;
 
+class heifdata;
+
 /** @brief Interface for reading an Image File (e.g. HEIF Image File) from the filesystem. */
 class HevcImageFileReader : public ImageFileReaderInterface
 {
+	friend std::string read_heif_exif_raw(HevcImageFileReader&, const uint32_t&)noexcept;
 public:
     HevcImageFileReader();
     virtual ~HevcImageFileReader() = default;
